@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  componentDidMount() {
-    console.log("Counter - mount");
-  }
-
-  componentDidUpdate() {
-    console.log("Counter -  Updated");
-  }
-
   render() {
     return (
       <div>

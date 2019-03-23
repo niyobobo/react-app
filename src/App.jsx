@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./components/navbar";
 import Counters from "./components/counters";
-import "./App.css";
 
 class App extends Component {
   state = {
@@ -13,22 +12,13 @@ class App extends Component {
     ]
   };
 
-  constructor() {
-    super();
-    console.log("App constructor");
-  }
-
-  componentDidMount() {
-    console.log("Component did mount");
-  }
-
   handleDelete = counterId => {
     const counters = this.state.counters.filter(c => c.id !== counterId);
     this.setState({ counters });
   };
 
   handleIncrement = counter => {
-    const counters = [...this.state.counters]; //bread operators to clone value from existing object
+    const counters = [...this.state.counters]; //Spread operators to clone value from existing object
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
     counters[index].value++;
@@ -44,8 +34,6 @@ class App extends Component {
   };
 
   render() {
-    console.log("Component rendered");
-
     return (
       <React.Fragment>
         <NavBar
